@@ -8,7 +8,7 @@ describe('Turn', function() {
     let card;
     let turn;
 
-    this.beforeEach(() => {
+    beforeEach(() => {
         card = new Card(12, "Which iteration method returns an array of the same length as the original array?", ["map()", "forEach()", "reduce()"], "map()");
         turn = new Turn("forEach()", card);
     })
@@ -26,19 +26,21 @@ describe('Turn', function() {
         expect(turn.card).to.equal(card);
     })
 
-    it('should be able to return the user\'s guess', () => {
-
+    it.skip('should be able to return the user\'s guess', () => {
+        expect(turn.returnGuess()).to.equal("forEach()");
     })
 
-    it('should be able to return the Card', () => {
-
+    it.skip('should be able to return the Card', () => {
+        expect(turn.returnCard()).to.equal(card);
     })
 
-    it('should be able to evaluate the guess for correctness', () => {
-
+    it.skip('should be able to evaluate the guess for correctness', () => {
+       let response = turn.evaluateGuess();
+       expect(response).to.equal(false);
     })
 
-    it('should be able to give feedback to the user on their guess', () => {
-        
+    it.skip('should be able to give feedback to the user on their guess', () => {
+        let feedback = turn.giveFeedback();
+        expect(feedback).to.equal('incorrect!');
     })
 });
