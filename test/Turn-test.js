@@ -26,21 +26,29 @@ describe('Turn', function() {
         expect(turn.card).to.equal(card);
     })
 
-    it.skip('should be able to return the user\'s guess', () => {
+    it('should be able to return the user\'s guess', () => {
         expect(turn.returnGuess()).to.equal("forEach()");
     })
 
-    it.skip('should be able to return the Card', () => {
+    it('should be able to return the Card', () => {
         expect(turn.returnCard()).to.equal(card);
     })
 
-    it.skip('should be able to evaluate the guess for correctness', () => {
+    it('should be able to evaluate the guess for correctness', () => {
        let response = turn.evaluateGuess();
        expect(response).to.equal(false);
+
+       let newTurn = new Turn("map()", card);
+       let newResponse = newTurn.evaluateGuess();
+       expect(newResponse).to.equal(true);
     })
 
-    it.skip('should be able to give feedback to the user on their guess', () => {
+    it('should be able to give feedback to the user on their guess', () => {
         let feedback = turn.giveFeedback();
         expect(feedback).to.equal('incorrect!');
+
+        let newTurn = new Turn("map()", card);
+        let newFeedback = newTurn.giveFeedback();
+        expect(newFeedback).to.equal("correct!");
     })
 });

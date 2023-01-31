@@ -1,8 +1,23 @@
 class Turn {
-//constructor will take in a user guess and a Card object
     constructor(userGuess, card) {
-    this.userGuess = userGuess;
-    this.card = card;
+        this.userGuess = userGuess;
+        this.card = card;
+    }
+
+    returnGuess() {
+        return this.userGuess;
+    }
+
+    returnCard() {
+        return this.card;
+    }
+
+    evaluateGuess() {
+       return this.userGuess === this.card.correctAnswer ? true : false
+    }
+
+    giveFeedback() {
+       return this.evaluateGuess() ? "correct!" : "incorrect!"
     }
 }
 
