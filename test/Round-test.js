@@ -39,11 +39,6 @@ describe("Round", () => {
         beforeEach(() => {
             round1.takeTurn("prototype method");
         })
-
-        // it('should create an instance of Turn when a guess is made', () => {
-        //    let newTurn = round1.takeTurn("prototype method");
-        //    expect(newTurn.userGuess).to.equal("prototype method");
-        // })
     
         it('should update the turns count', () => {
             expect(round1.turns).to.equal(1);
@@ -78,7 +73,8 @@ describe("Round", () => {
     })
 
     it.skip('should calculate the percentage of correct guesses', () => {
-      //at this point we will have an array of incorrect guesses and total turns, we could take the incorrect guesses.length/total, then multiply by 100 and then subtract from 100 to get the percent correct?  
+      //at this point we will have an array of incorrect guesses and total turns, we could take the incorrect guesses.length/total, then multiply by 100 and then subtract from 100 to get the percent correct? 
+
     })
 
     it.skip('should be able to end the round with a message', () => {
