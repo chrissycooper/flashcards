@@ -80,13 +80,13 @@ describe("Round", () => {
         expect(percentCorrect).to.equal(33);
     })
 
-    it.skip('should be able to end the round with a message', () => {
-        //so is the round over when we reach the deck.length-1 array value, or when there are no cards left in the array?
+    it('should be able to end the round with a message', () => {
+
         round1.takeTurn("prototype method");
         round1.takeTurn("false");
         round1.takeTurn("Object.assign()");
         const endMessage = round1.endRound();
-        expect(endMessage).to.equal("** Round over! ** You answered 33% of the questions correctly!")
+        expect(endMessage).to.equal("** Round over! ** You answered 33% of the questions correctly!");
     })
 
 
