@@ -25,7 +25,7 @@ describe("Round", () => {
 
     it('should have a deck', () => {
         expect(round1.deck).to.deep.equal(deck1);
-    });
+    })
 
     it('should be able to return the current card', () => {
         let returnedCard = round1.returnCurrentCard();
@@ -70,6 +70,7 @@ describe("Round", () => {
 
     })
 
+    
     it('should calculate the percentage of correct guesses', () => {
         round1.takeTurn("prototype method");
         round1.takeTurn("false");
@@ -81,6 +82,11 @@ describe("Round", () => {
 
     it.skip('should be able to end the round with a message', () => {
         //so is the round over when we reach the deck.length-1 array value, or when there are no cards left in the array?
+        round1.takeTurn("prototype method");
+        round1.takeTurn("false");
+        round1.takeTurn("Object.assign()");
+        const endMessage = round1.endRound();
+        expect(endMessage).to.equal("** Round over! ** You answered 33% of the questions correctly!")
     })
 
 

@@ -31,8 +31,10 @@ class Round {
          const percentIncorrect = Math.ceil((numIncorrect/totalGuesses * 100));
          const percentCorrect = 100 - percentIncorrect;
 
-         return percentCorrect
+         return percentCorrect;
     }
+
+    
 }
 
 module.exports = Round;
