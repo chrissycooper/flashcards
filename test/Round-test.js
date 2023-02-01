@@ -70,13 +70,13 @@ describe("Round", () => {
 
     })
 
-    it.skip('should calculate the percentage of correct guesses', () => {
+    it('should calculate the percentage of correct guesses', () => {
         round1.takeTurn("prototype method");
         round1.takeTurn("false");
         round1.takeTurn("Object.assign()");
 
         let percentCorrect = round1.calculatePercentCorrect();
-        expect(percentCorrect).to.equal(33)
+        expect(percentCorrect).to.equal(33);
     })
 
     it.skip('should be able to end the round with a message', () => {

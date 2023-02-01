@@ -26,7 +26,12 @@ class Round {
     }
 
     calculatePercentCorrect() {
-         //at this point we will have an array of incorrect guesses and total turns, we could take the incorrect guesses.length/total, then multiply by 100 and then subtract from 100 to get the percent correct? 
+         const numIncorrect = this.incorrectGuesses.length;
+         const totalGuesses = this.deck.cards.length;
+         const percentIncorrect = Math.ceil((numIncorrect/totalGuesses * 100));
+         const percentCorrect = 100 - percentIncorrect;
+
+         return percentCorrect
     }
 }
 
