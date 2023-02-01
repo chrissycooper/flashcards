@@ -48,10 +48,13 @@ describe("Round", () => {
     
         it('should update the turns count', () => {
             //regardless of whether the guess is correct or incorrect
+            round1.takeTurn("prototype method");
+            expect(round1.turns).to.equal(1);
         })
 
         it('should update the currentCard to the next card', () => {
             //should the array be .shifted()? or should the index value be updated?
+            
         })
 
         it('should evaluate guess and record guess', () => {
