@@ -5,7 +5,6 @@ const expect = chai.expect;
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
-const Turn = require('../src/Turn');
 
 describe("Round", () => {
     let deck1;
@@ -14,7 +13,6 @@ describe("Round", () => {
     let card3;
     let setOfCards;
     let round1;
-    let turn1;
 
     beforeEach(() => {
         card1 = new Card(30, "What type of methods are functions that allow you to manipulate the value of a particular data type or class?", ["prototype method", "object", "callback function"], "prototype method")
@@ -73,8 +71,12 @@ describe("Round", () => {
     })
 
     it.skip('should calculate the percentage of correct guesses', () => {
-      //at this point we will have an array of incorrect guesses and total turns, we could take the incorrect guesses.length/total, then multiply by 100 and then subtract from 100 to get the percent correct? 
+        round1.takeTurn("prototype method");
+        round1.takeTurn("false");
+        round1.takeTurn("Object.assign()");
 
+        let percentCorrect = round1.calculatePercentCorrect();
+        expect(percentCorrect).to.equal(33)
     })
 
     it.skip('should be able to end the round with a message', () => {

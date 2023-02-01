@@ -24,6 +24,10 @@ class Round {
         this.currentCard = this.deck.cards[this.turns];
         return feedback;
     }
+
+    calculatePercentCorrect() {
+         //at this point we will have an array of incorrect guesses and total turns, we could take the incorrect guesses.length/total, then multiply by 100 and then subtract from 100 to get the percent correct? 
+    }
 }
 
 module.exports = Round;
