@@ -28,6 +28,6 @@ describe('Deck', function () {
 
     it("should know how many cards are in your deck", () => {
         let numOfCards = deck1.countCards();
-        expect(numOfCards).to.equal(3)
+        expect(numOfCards).to.equal(3);
     })
 })
