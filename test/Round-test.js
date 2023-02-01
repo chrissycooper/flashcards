@@ -38,7 +38,7 @@ describe("Round", () => {
 
     describe('takeTurn', () => {
         beforeEach(() => {
-            turn1 = new Turn("prototype method",);
+            round1.takeTurn("prototype method");
         })
 
         it('should create an instance of Turn when a guess is made', () => {
@@ -47,21 +47,24 @@ describe("Round", () => {
         })
     
         it('should update the turns count', () => {
-            //regardless of whether the guess is correct or incorrect
-            round1.takeTurn("prototype method");
             expect(round1.turns).to.equal(1);
         })
 
         it('should update the currentCard to the next card', () => {
-            //should the array be .shifted()? or should the index value be updated?
-            
+            expect(round1.turns).to.equal(1);
+            expect(round1.currentCard).to.deep.equal(round1.deck.cards[1]);
         })
 
         it('should evaluate guess and record guess', () => {
             //Incorrect guesses will be stored (via the id) in an array of incorrectGuesses
+            expect(round1.incorrectGuesses).to.equal(0);
+            round1.takeTurn("false");
+            expect(round1.incorrectGuesses).to.equal(1);
+            round1.takeTurn("Object.assign()");
+            expect(round1.incorrectGuesses).to.equal(2);
         }) 
 
-        it('should return feedback on the guess\'s accuracy', () => {
+        it.skip('should return feedback on the guess\'s accuracy', () => {
 
         })
 
