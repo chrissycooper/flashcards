@@ -1,9 +1,11 @@
 const chai = require('chai');
+const { beforeEach } = require('mocha');
 const expect = chai.expect;
 
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
+const Turn = require('../src/Turn');
 
 describe("Round", () => {
     let deck1;
@@ -12,6 +14,7 @@ describe("Round", () => {
     let card3;
     let setOfCards;
     let round1;
+    let turn1;
 
     beforeEach(() => {
         card1 = new Card(30, "What type of methods are functions that allow you to manipulate the value of a particular data type or class?", ["prototype method", "object", "callback function"], "prototype method")
@@ -20,6 +23,7 @@ describe("Round", () => {
         setOfCards = [card1, card2, card3];
         deck1 = new Deck(setOfCards);
         round1 = new Round(deck1);
+        
     })
 
     it('should have a deck', () => {
@@ -33,8 +37,13 @@ describe("Round", () => {
     })
 
     describe('takeTurn', () => {
+        beforeEach(() => {
+            turn1 = new Turn("prototype method",);
+        })
+
         it('should create an instance of Turn when a guess is made', () => {
-        
+           let newTurn = round1.takeTurn("prototype method");
+           expect(newTurn.userGuess).to.equal("prototype method");
         })
     
         it('should update the turns count', () => {
