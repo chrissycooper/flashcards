@@ -11,7 +11,6 @@ describe('Deck', function () {
     let card3;
     let setOfCards;
 
-
     beforeEach(() => {
         card1 = new Card(30, "What type of methods are functions that allow you to manipulate the value of a particular data type or class?", ["prototype method", "object", "callback function"], "prototype method")
         card2 = new Card(29, "map() takes in two optional arguments: the index of the current element, and the array that map was called upon", ["true", "false"], true);
