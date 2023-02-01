@@ -56,12 +56,17 @@ describe("Round", () => {
         })
 
         it('should evaluate guess and record guess', () => {
-            //Incorrect guesses will be stored (via the id) in an array of incorrectGuesses
-            expect(round1.incorrectGuesses).to.equal(0);
+            expect(round1.incorrectGuesses.length).to.equal(0);
             round1.takeTurn("false");
-            expect(round1.incorrectGuesses).to.equal(1);
+
+            expect(round1.incorrectGuesses.length).to.equal(1);
+            expect(round1.incorrectGuesses).to.deep.equal([29]);
+
             round1.takeTurn("Object.assign()");
-            expect(round1.incorrectGuesses).to.equal(2);
+
+            expect(round1.incorrectGuesses.length).to.equal(2);
+            expect(round1.incorrectGuesses).to.deep.equal([29, 28]);
+
         }) 
 
         it.skip('should return feedback on the guess\'s accuracy', () => {
