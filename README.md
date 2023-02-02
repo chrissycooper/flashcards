@@ -1,7 +1,7 @@
 # FlashCards 
 
 
-## Abstract at the top (A sentence or two describing the project)
+## Abstract
 
 Flashcards is a question and answer game fully playable on the command line. One goal of this project was to practice utilizing larger datasets using class to class interaction. Another goal was to practice building unit tests in tandem with implementation code using the Mocha framework and Chai test library.
 
