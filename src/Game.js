@@ -34,8 +34,8 @@ class Game {
   }
 
   putsCards() {
-  const deck = new Deck(this.createsCards());
-  return deck;
+    const deck = new Deck(this.createsCards());
+    return deck;
   }
 }
 
