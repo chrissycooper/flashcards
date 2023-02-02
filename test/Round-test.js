@@ -1,5 +1,4 @@
 const chai = require('chai');
-const { beforeEach } = require('mocha');
 const expect = chai.expect;
 
 const Card = require('../src/Card');
