@@ -39,6 +39,10 @@ describe("Round", () => {
     
         it('should update the turns count', () => {
             expect(round1.turns).to.equal(1);
+
+            round1.takeTurn("false");
+            round1.takeTurn("Object.assign()");
+            expect(round1.turns).to.equal(3);
         })
 
         it('should update the currentCard to the next card', () => {
@@ -46,8 +50,13 @@ describe("Round", () => {
             expect(round1.currentCard).to.deep.equal(round1.deck.cards[1]);
         })
 
-        it('should evaluate guess and record guess', () => {
+        it('should not add a correct guess to the incorrectGuesses count', () => {
             expect(round1.incorrectGuesses.length).to.equal(0);
+            expect(round1.incorrectGuesses).to.deep.equal([]);
+
+        })
+
+        it('should evaluate guess and record incorrect guess', () => {
             round1.takeTurn("false");
 
             expect(round1.incorrectGuesses.length).to.equal(1);
@@ -59,23 +68,34 @@ describe("Round", () => {
             expect(round1.incorrectGuesses).to.deep.equal([29, 28]);
         }) 
 
-        it('should return feedback on the guess\'s accuracy', () => {
+        it('should return feedback on the guess\'s accuracy if true', () => {
             const feedback1 = round1.takeTurn("true");
             expect(feedback1).to.equal('correct!');
-            
+        })
+
+        it('should return feedback on the guess\'s accuracy if false', () => {
             const feedback2 = round1.takeTurn("Object.assign()");
             expect(feedback2).to.equal('incorrect!');
         })
     })
 
     
-    it('should calculate the percentage of correct guesses', () => {
+    it('should calculate the percentage of correct guesses - low', () => {
         round1.takeTurn("prototype method");
         round1.takeTurn("false");
         round1.takeTurn("Object.assign()");
 
         let percentCorrect = round1.calculatePercentCorrect();
         expect(percentCorrect).to.equal(33);
+    })
+
+    it('should calculate the percentage of correct guesses - high', () => {
+        round1.takeTurn("prototype method");
+        round1.takeTurn("true");
+        round1.takeTurn("Object.assign()");
+
+        let percentCorrect = round1.calculatePercentCorrect();
+        expect(percentCorrect).to.equal(66);
     })
 
     it('should be able to end the round with a message', () => {
