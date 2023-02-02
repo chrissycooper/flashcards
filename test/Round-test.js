@@ -79,11 +79,11 @@ describe("Round", () => {
     })
 
     it('should be able to end the round with a message', () => {
-
         round1.takeTurn("prototype method");
         round1.takeTurn("false");
         round1.takeTurn("Object.assign()");
         const endMessage = round1.endRound();
+
         expect(endMessage).to.equal("** Round over! ** You answered 33% of the questions correctly!");
     })
 })
