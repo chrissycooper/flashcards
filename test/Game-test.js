@@ -5,13 +5,11 @@ const Game = require('../src/Game');
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 
-
 describe('Game', function() {
     const game = new Game();
 
     it('should create cards', () => {
         let card = game.createsCards()
-        // console.log(card)
         expect(card.length).to.equal(30);
     })
 
