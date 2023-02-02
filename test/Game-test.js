@@ -7,14 +7,19 @@ const Deck = require('../src/Deck');
 
 describe('Game', function() {
     const game = new Game();
-
+    
     it('should create cards', () => {
-        let card = game.createsCards()
+        const cards = game.createsCards()
+        expect(cards[0]).to.be.an.instanceOf(Card);
+    })
+    
+    it('should create 30 cards', () => {
+        const card = game.createsCards()
         expect(card.length).to.equal(30);
     })
 
     it('should put cards in a deck', () => {
-        let deck = game.putsCards();
+        const deck = game.putsCards();
         expect(deck).to.be.an.instanceOf(Deck);
     })
 

@@ -28,7 +28,7 @@ class Game {
 
   createsCards() {
     const newArr = prototypeQuestions.map((element) => {
-      return new Card(element.id, element.question, element.answers, element.correctAnswer)
+      return new Card(element.id, element.question, element.answers, element.correctAnswer);
    })
    return newArr;
   }

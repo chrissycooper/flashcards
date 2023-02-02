@@ -28,6 +28,8 @@ To play Flashcards and study facts about iterator methods:
 
 A challenge of Flashcards was to think ahead of implementation to be able to write effective and useful tests. It was a really great exercise for zooming out my mindset to think big picture and slowing down the development process. 
 
+I am proud of how I approached the last iteration, i.e. connecting all the pieces I built together via the Game class. I was a bit unsure of how to start, but I was able to explore and work my way through it with curiosity, yielding great results!
+
 
 
 
