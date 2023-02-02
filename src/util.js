@@ -1,15 +1,15 @@
 const inquirer = require('inquirer');
 
-const genList = (round) => {
-  let card = round.returnCurrentCard();
+const genList = (round) => {  //takes in a parameter
+  let card = round.returnCurrentCard(); //0 index of the cards passed into the round
   
-  let choices = card.answers.map((answer, index) => {
+  let choices = card.answers.map((answer, index) => { //takes all of the possible answers from the currentCard, and returns them as an object, labels them by index value
     return {
       key: index,
       value: answer
     }
   });
-  return {
+  return {          //this genList function returns this object, with the message of the question, and the object of choices 
     type: 'rawlist',
     message: card.question,
     name: 'answers',
@@ -17,22 +17,22 @@ const genList = (round) => {
   };
 }
 
-const getRound = (round) => {
-  return Promise.resolve(round);
+const getRound = (round) => {   //takes in a round
+  return Promise.resolve(round);  //returns a Promise, waits for the round in some way?
 }
 
 const confirmUpdate = (id, round) => {
-  const feedback = round.takeTurn(id);
+  const feedback = round.takeTurn(id); //takes in the guess not the id
   return {
     name: 'feedback',
     message: `Your answer of ${id} is ${feedback}`
   }
 }
 
-async function main(round) {
+async function main(round) { //takes in a round
 
-  const currentRound = await getRound(round);
-  const getAnswer = await inquirer.prompt(genList(currentRound));
+  const currentRound = await getRound(round); //waits for getRound's return, which is the round
+  const getAnswer = await inquirer.prompt(genList(currentRound)); //generates the message/question
   const getConfirm = await inquirer.prompt(confirmUpdate(getAnswer.answers, round));
 
     if(!round.returnCurrentCard()) {
