@@ -21,9 +21,9 @@ class Game {
 
   start() {
       const deck = this.putsCards();
-      const round = new Round(deck);
-      this.printMessage(deck, round);
-      this.printQuestion(round);
+      this.currentRound = new Round(deck);
+      this.printMessage(deck, this.currentRound);
+      this.printQuestion(this.currentRound);
   }
 
   createsCard() {
