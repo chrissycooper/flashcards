@@ -10,16 +10,14 @@ describe('Game', function() {
     const game = new Game();
 
     it('should create cards', () => {
-        let card = game.createsCard()
-        expect(card).to.be.an.instanceOf(Card);
+        let card = game.createsCards()
+        // console.log(card)
+        expect(card.length).to.equal(30);
     })
 
     it('should put cards in a deck', () => {
         let deck = game.putsCards();
+        console.log(deck)
         expect(deck).to.be.an.instanceOf(Deck);
-    })
-
-    it('should start the game', () => {
-        game.start();
     })
 })

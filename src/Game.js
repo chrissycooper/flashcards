@@ -16,7 +16,7 @@ class Game {
   }
 
   printQuestion(round) {
-      util.main(round); //main is called here
+      util.main(round); 
   }
 
   start() {
@@ -26,21 +26,16 @@ class Game {
       this.printQuestion(this.currentRound);
   }
 
-  createsCard() {
-    const randomIndex = Math.floor(Math.random() * prototypeQuestions.length);
-    const randomCard = new Card(prototypeQuestions[randomIndex].id, prototypeQuestions[randomIndex].question, prototypeQuestions[randomIndex].answers,prototypeQuestions[randomIndex].correctAnswer )
-    return randomCard;
+  createsCards() {
+    const newArr = prototypeQuestions.map((element) => {
+      return new Card(element.id, element.question, element.answers, element.correctAnswer)
+   })
+   return newArr;
   }
 
   putsCards() {
-   const card1 = this.createsCard()
-   const card2 = this.createsCard();
-   const card3 = this.createsCard();
-   const card4 = this.createsCard();
-   const card5 = this.createsCard();
-  
-   const deck = new Deck([card1, card2, card3, card4, card5]);
-   return deck;
+  const deck = new Deck(this.createsCards());
+  return deck;
   }
 }
 
