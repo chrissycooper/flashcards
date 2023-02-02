@@ -15,7 +15,6 @@ describe('Game', function() {
 
     it('should put cards in a deck', () => {
         let deck = game.putsCards();
-        console.log(deck)
         expect(deck).to.be.an.instanceOf(Deck);
     })
 })
